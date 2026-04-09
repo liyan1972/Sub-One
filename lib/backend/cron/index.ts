@@ -120,7 +120,12 @@ export async function handleCronTrigger(env: Env): Promise<Response> {
             console.log(`Updated ${updates.size} subscriptions with new info.`);
 
             // 发送自动更新结果汇总到 TG
-            const summaryMsg = `🔄 *定时更新报告*\n\n✅ 成功刷新了 \`${updates.size}\` 个订阅的数据。`;
+            const summaryMsg = 
+                `┏━━━━━━━━━━━━━━━━━━━━━┓\n` +
+                `┃  ⏰ 定时更新报告  ┃\n` +
+                `┗━━━━━━━━━━━━━━━━━━━━━┛\n\n` +
+                `✅ 成功刷新了 \`${updates.size}\` 个订阅的数据\n` +
+                `📅 所有订阅节点信息已同步至最新状态`;
             await sendTgNotification(settings as AppConfig, summaryMsg);
         }
     } else {

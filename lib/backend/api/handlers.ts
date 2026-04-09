@@ -721,7 +721,11 @@ export async function handleApiRequest(request: Request, env: Env): Promise<Resp
 
                     // 只在非静默模式下发送 TG 通知（用户从设置模态框主动保存）
                     if (!isSilent) {
-                        const message = `⚙️ *Sub-One 设置更新* ⚙️\n\n您的 Sub-One 应用设置已成功更新。`;
+                        const message = 
+                            `┏━━━━━━━━━━━━━━━━━━━━━┓\n` +
+                            `┃   ⚙️ 设置已更新   ┃\n` +
+                            `┗━━━━━━━━━━━━━━━━━━━━━┛\n\n` +
+                            `✅ 您的 Sub-One 应用设置已成功保存并生效。`;
                         await sendTgNotification(finalSettings, message);
                     }
 

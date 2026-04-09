@@ -119,7 +119,12 @@ export function useSubscriptions(
 
                 // 发送 TG 通知（仪表板立即更新）
                 if (successCount > 0) {
-                    const message = `🔄 *批量更新完成*\n\n✅ 成功更新了 \`${successCount}\` 个订阅`;
+                    const message = 
+                        `┏━━━━━━━━━━━━━━━━━━━━━┓\n` +
+                        `┃  🔄 批量更新完成  ┃\n` +
+                        `┗━━━━━━━━━━━━━━━━━━━━━┛\n\n` +
+                        `✅ 成功更新了 \`${successCount}\` 个订阅\n` +
+                        `📊 仪表板数据已同步完成`;
                     api.sendNotification(message).catch((err) => {
                         console.error('发送 TG 通知失败:', err);
                     });

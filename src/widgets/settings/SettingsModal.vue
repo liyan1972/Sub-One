@@ -709,7 +709,7 @@ watch(
                                         placeholder="任意复杂的字符串，例如：my_secret_token"
                                     />
                                     <p class="mt-2 text-xs text-gray-500 dark:text-gray-400">
-                                        留空将禁止外部触发。配置后，您可以使用第三方工具（如 UptimeRobot、宝塔计划任务或 GitHub Actions）定期请求：<br />
+                                        留空将禁止外部触发。配置后，您可以使用第三方工具（如 UptimeRobot、宝塔计划任务）定期请求：<br />
                                         <code class="px-1 py-0.5 mt-1 bg-gray-100 dark:bg-gray-800 text-indigo-600 dark:text-indigo-400 rounded inline-block select-all">/api/cron/trigger?token=您的密钥</code><br />
                                         如果您使用的是 Cloudflare Pages，由于平台限制必须通过这种接口方式触发定时任务；Docker 用户自带内部定时器，可选择配置。
                                     </p>
